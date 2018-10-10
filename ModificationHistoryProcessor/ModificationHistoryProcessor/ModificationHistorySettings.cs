@@ -1,4 +1,6 @@
-﻿using System;
+﻿// 10.10.2018 [DaliborLysak] wrong last history line detection #3
+
+using System;
 using System.ComponentModel;
 
 namespace ModificationHistoryProcessor
@@ -37,7 +39,7 @@ namespace ModificationHistoryProcessor
             return String.IsNullOrEmpty(DateFormat);
         }
 
-        [Category("Replace Settings"), DefaultValue(@"//.*\[.*\]\s*.*")]
+        [Category("Replace Settings"), DefaultValue(@"//.*\[{0,1}.*\]{0,1}\s*.*")]
         public string SearchPatternStart { get; set; } = String.Empty;
 
         private bool ShouldSerializeSearchPattern()

@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
-using System.Text.RegularExpressions;
+﻿// 10.10.2018 [DaliborLysak] wrong last history line detection #3
+
+using System;
 using System.Windows.Forms;
 
 namespace ModificationHistoryProcessor

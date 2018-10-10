@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿// 10.10.2018 [DaliborLysak] wrong last history line detection #3
+
+using System;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 
 namespace ModificationHistoryProcessor
@@ -61,7 +61,7 @@ namespace ModificationHistoryProcessor
 
         private bool IsLastHistoryLine(string line, string nextLine)
         {
-            return IsHistoryLine(line) && !IsHistoryLine(nextLine);
+            return IsHistoryLine(line) && String.IsNullOrEmpty(nextLine);
         }
 
         private bool IsHistoryLine(string line)
