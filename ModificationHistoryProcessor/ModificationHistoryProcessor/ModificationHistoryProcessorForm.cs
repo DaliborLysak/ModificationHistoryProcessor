@@ -110,6 +110,8 @@ namespace ModificationHistoryProcessor
 
         }
 
+        private string HistoryLine = String.Empty;
+
         private void toolStripButtonProcessLine_Click(object sender, EventArgs e)
         {
             Process(ProcessLine, sender, e);
@@ -119,7 +121,9 @@ namespace ModificationHistoryProcessor
         {
             if (Clipboard.ContainsText())
             {
-                richTextBoxGet.Text = new ModificationHistoryLine().Get(propertyGridSettings.SelectedObject as ModificationHistorySettings, Clipboard.GetText());
+                var settings = propertyGridSettings.SelectedObject as ModificationHistorySettings;
+                HistoryLine = new ModificationHistoryLine().Get(settings, Clipboard.GetText());
+                richTextBoxGet.Text = $"{settings.HeaderInplacePattern.Replace("\\r\\n", Environment.NewLine)}{HistoryLine}";
             }
         }
 

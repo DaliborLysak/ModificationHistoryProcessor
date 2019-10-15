@@ -63,7 +63,7 @@ namespace ModificationHistoryProcessor
             return String.IsNullOrEmpty(HeaderSearchPattern);
         }
 
-        [Category("Replace Settings"), DefaultValue(@"// MODIFICATION HISTORY\r\n// ----------------------------------------------------------------------\r\n")]
+        [Category("Replace Settings"), DefaultValue(@"// MODIFICATION HISTORY\r\n// -----------------------------------------------------------------------------\r\n")]
         public string HeaderInplacePattern { get; set; } = String.Empty;
 
         private bool ShouldSerializeHeaderInplacePattern()
